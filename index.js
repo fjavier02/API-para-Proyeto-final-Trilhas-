@@ -6,6 +6,9 @@ const app = express()
 const sequelize = new Sequelize({ dialect: 'sqlite', storage: './task-list.db' })
 const tasks = Task(sequelize, DataTypes)
 
+const cors = require('cors')
+
+app.use(cors())
 
 
 // We need to parse JSON coming from requests
